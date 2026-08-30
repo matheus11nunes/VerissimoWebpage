@@ -143,3 +143,37 @@ if (yearElement) {
         `© ${new Date().getFullYear()} Luiz Felippe Veríssimo. Todos os direitos reservados.`;
 
 }
+
+/* =========================================
+   MODAL HANDLER
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("trajetoriaModal");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    if (openModalBtn && modal) {
+        openModalBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.classList.add("active");
+            document.body.style.overflow = "hidden"; // Stop background scroll
+        });
+    }
+
+    if (closeModalBtn && modal) {
+        closeModalBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+});

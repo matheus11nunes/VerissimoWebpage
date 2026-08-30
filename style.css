@@ -1073,3 +1073,75 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =========================================
+   MODAL TRAJETÓRIA
+========================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.modal-container {
+    background: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #171717;
+}
+
+.modal-section h2 {
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+}
+
+.modal-divider {
+    border: 0;
+    height: 1px;
+    background: var(--light-gray);
+    margin: 24px 0;
+}
+@media (max-width: 480px) {
+    .modal-container {
+        padding: 25px;
+    }
+}
