@@ -961,7 +961,7 @@ p {
 
     /* Method */
 
-    .method-content {
+    /* .method-content {
         grid-template-columns: 1fr;
     }
 
@@ -972,6 +972,46 @@ p {
     .method-image {
         height: 350px;
         max-width: 100%;
+    } */
+
+    /* =========================================
+       METHOD 3F (MOBILE BACKGROUND FIX)
+    ========================================= */
+
+    .method {
+        position: relative;
+    }
+
+    .method-content {
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    .method-text {
+        padding: 50px 0 60px 0;
+        position: relative;
+        z-index: 2; /* Keeps text above the image */
+        background: linear-gradient(180deg, rgba(16, 16, 16, 0.85) 0%, rgba(16, 16, 16, 0.65) 60%, rgba(16, 16, 16, 0.95) 100%);
+    }
+
+    .method-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* Places image behind text */
+        justify-content: center;
+    }
+
+    .method-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top center;
+        opacity: 0.45; /* Softens image so text stays easy to read */
+        -webkit-mask-image: none;
+        mask-image: none;
     }
 
 
