@@ -107,8 +107,13 @@ p {
 
 .logo {
     display: flex;
-    flex-direction: column;
-    line-height: 1;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;       /* Ajuste a altura ideal para sua logo */
+    width: auto;        /* Mantém a proporção da imagem */
+    object-fit: contain;
 }
 
 .logo span {
@@ -943,15 +948,27 @@ p {
     /* About */
 
     .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .about-image {
-        /* height: 430px; */
-        height: auto;
+        height: auto !important;
+        width: 100%;
+        max-height: none;
     }
 
+    .about-image img {
+        width: 100%;
+        height: auto !important;
+        max-height: 450px;
+        object-fit: cover;
+    }
+
+    .about-content {
+        padding-top: 10px;
+    }
 
     /* Formation */
 
@@ -1095,7 +1112,7 @@ p {
 
     .about-image,
     .integration-image {
-        height: 350px;
+        height: auto;
     }
 
 }
